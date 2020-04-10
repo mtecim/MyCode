@@ -7,14 +7,14 @@ lastlogfiles= ["","","",""]
 
 for i in range (1,4):
     marks[i]=1
-    list_of_files = glob.glob('/data/btkbab/workspaces/mtecim/elasticsearch_'+str(i)+'/example_log_file.log*')  # * means all if need specific format then *.csv
+    list_of_files = glob.glob('/data/workspaces/mtecim/elasticsearch_'+str(i)+'/example_log_file.log*')  # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
     lastlogfiles[i]=latest_file
 
 
 def restart_es():
     for i in range (1,4):
-        list_of_files = glob.glob('/data/btkbab/workspaces/mtecim/elasticsearch_' + str(
+        list_of_files = glob.glob('/data/workspaces/mtecim/elasticsearch_' + str(
             i) + '/example_log_file.log*')  # * means all if need specific format then *.csv
         lastlogfile = max(list_of_files, key=os.path.getctime)
         mark=marks[i]
