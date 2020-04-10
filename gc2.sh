@@ -4,13 +4,13 @@ declare -a marks
 declare -a lastlogfiles
 for i in {1..3}; do
    marks[$i]=1
-   lastlogfiles[$i]=`ls -alrt /data/btkbab/workspaces/mtecim/elasticsearch_$i/example_log_file.log | tail -1 | awk {'print $NF'}`
+   lastlogfiles[$i]=`ls -alrt /data/workspaces/mtecim/elasticsearch_$i/example_log_file.log | tail -1 | awk {'print $NF'}`
 done
 
 restart_es() {
   for i in {1..3}
   do
-    lastlogfile=`ls -alrt /data/btkbab/workspaces/mtecim/elasticsearch_$i/example_log_file.log | tail -1 | awk {'print $NF'}`
+    lastlogfile=`ls -alrt /data/workspaces/mtecim/elasticsearch_$i/example_log_file.log | tail -1 | awk {'print $NF'}`
     mark=${marks[$i]}
     #echo "Fetched mark = $mark"
     #if [ lastlogfile is not equal to lastlogfiles[i]
